@@ -16,17 +16,11 @@ const setMovieData = (movieIndex, moviePrice) => {
 
 //update total and count
 const updateSelectedCount = () => {
-  const selectedSeats = document.querySelectorAll('.row .seat.selected')
-
+  const selectedSeats = document.querySelectorAll('.row .seat.selected');
   const seatsIndex = [...selectedSeats].map( seat => [...seats].indexOf(seat));
-
   localStorage.setItem('selectedSeats', JSON.stringify(seatsIndex));
-
-  console.log(seatsIndex);
-
   const selectedSeatsCount = selectedSeats.length;
   count.innerText = selectedSeatsCount;
-
   total.innerText = selectedSeatsCount * +movieSelect.value;
 }
 
